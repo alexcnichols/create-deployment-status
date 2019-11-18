@@ -1,0 +1,24 @@
+name: 'Create a Deployment Status'
+description: 'Create a deployment status in your repository'
+author: 'alexcnichols'
+inputs:
+  deployment_id:
+    description: 'The ID of the Deployment'
+    required: true
+  state: 
+    description: 'The state of the status. Can be one of error, failure, inactive, in_progress, queued, pending, or success.'
+    required: true
+    default: 'pending'
+  environment_url: 
+    description: 'Sets the URL for accessing your environment.'
+    required: false
+    default: ''
+outputs:
+  id:
+    description: 'The ID of the created Deployment Status'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'cloud'
+  color: 'gray-dark'
